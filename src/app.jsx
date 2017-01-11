@@ -7,6 +7,10 @@ var Weather = require('./components/Weather.jsx');
 var About = require('./components/About.jsx');
 var Examples = require('./components/Examples.jsx');
 
+//Load Foundation
+require('style!css!foundation-sites/dist/css/foundation.min.css');
+$(document).foundation();
+
 var App = React.createClass({
   render: function() {
     return (
