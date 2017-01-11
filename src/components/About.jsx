@@ -14,7 +14,10 @@ var About = (props) => {
           <a href="https://nodejs.org/en/">Node.js</a>
         </li>
         <li>
-          <a href="https://facebook.github.io/react/">React</a>
+          <a href="http://expressjs.com/">Express.js</a>
+        </li>
+        <li>
+          <a href="https://facebook.github.io/react/">React.js</a>
         </li>
         <li>
           <a href="https://webpack.github.io/">Webpack</a>
