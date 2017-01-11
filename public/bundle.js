@@ -27352,6 +27352,8 @@
 
 	var openWeatherMap = __webpack_require__(253);
 
+	var ErrorModal = __webpack_require__(285);
+
 	var Weather = React.createClass({
 	  displayName: 'Weather',
 
@@ -27363,7 +27365,10 @@
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
 
-	    this.setState({ isLoading: true });
+	    this.setState({
+	      isLoading: true,
+	      errorMessage: undefined
+	    });
 
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
@@ -27371,16 +27376,19 @@
 	        temp: temp,
 	        isLoading: false
 	      });
-	    }, function (errorMessage) {
-	      alert(errorMessage);
-	      that.setState({ isLoading: false });
+	    }, function (e) {
+	      that.setState({
+	        isLoading: false,
+	        errorMessage: e.message
+	      });
 	    });
 	  },
 	  render: function render() {
 	    var _state = this.state,
 	        isLoading = _state.isLoading,
 	        temp = _state.temp,
-	        location = _state.location;
+	        location = _state.location,
+	        errorMessage = _state.errorMessage;
 
 
 	    function renderMessage() {
@@ -27395,6 +27403,12 @@
 	      }
 	    }
 
+	    function renderError() {
+	      if (typeof errorMessage === 'string') {
+	        return React.createElement(ErrorModal, { message: errorMessage });
+	      }
+	    }
+
 	    return React.createElement(
 	      'div',
 	      null,
@@ -27404,7 +27418,8 @@
 	        'Get Weather'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch, className: 'text-center' }),
-	      renderMessage()
+	      renderMessage(),
+	      renderError()
 	    );
 	  }
 	});
@@ -29490,6 +29505,64 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	var React = __webpack_require__(8);
+
+	var ErrorModal = React.createClass({
+	  displayName: 'ErrorModal',
+
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      title: 'Error'
+	    };
+	  },
+	  propTypes: {
+	    title: React.PropTypes.string,
+	    message: React.PropTypes.string.isRequired
+	  },
+	  componentDidMount: function componentDidMount() {
+	    var modal = new Foundation.Reveal($('#error-modal'));
+	    modal.open();
+	  },
+	  render: function render() {
+	    var _props = this.props,
+	        title = _props.title,
+	        message = _props.message;
+
+	    return React.createElement(
+	      'div',
+	      { id: 'error-modal', className: 'reveal tiny text-center', 'data-reveal': true },
+	      React.createElement(
+	        'h4',
+	        null,
+	        title
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        message
+	      ),
+	      React.createElement(
+	        'p',
+	        null,
+	        React.createElement(
+	          'button',
+	          { className: 'button', 'data-close': '' },
+	          'OK'
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = ErrorModal;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }
 /******/ ]);
