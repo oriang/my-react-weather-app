@@ -11,6 +11,9 @@ var Examples = require('./components/Examples.jsx');
 require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
+// Costum CSS
+require('style!css!./styles/app.css');
+
 var App = React.createClass({
   render: function() {
     return (
