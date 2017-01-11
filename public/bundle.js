@@ -29000,28 +29000,87 @@
 /* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var About = function About(props) {
 	  return React.createElement(
-	    'div',
+	    "div",
 	    null,
 	    React.createElement(
-	      'h3',
-	      null,
-	      'About'
+	      "h1",
+	      { className: "text-center" },
+	      "About"
 	    ),
 	    React.createElement(
-	      'p',
+	      "p",
 	      null,
-	      'Welcome to About page'
+	      "I created this weather web app with 'the complete react web app developer' course, you can find that course on udemy.com"
+	    ),
+	    React.createElement(
+	      "p",
+	      null,
+	      "Here are some tools i used:"
+	    ),
+	    React.createElement(
+	      "ul",
+	      null,
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "https://nodejs.org/en/" },
+	          "Node.js"
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "https://facebook.github.io/react/" },
+	          "React"
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "https://webpack.github.io/" },
+	          "Webpack"
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "http://foundation.zurb.com/" },
+	          "Foundation"
+	        )
+	      ),
+	      React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { href: "https://openweathermap.org/" },
+	          "Open Weather Map"
+	        )
+	      )
 	    )
 	  );
 	};
 
 	module.exports = About;
+
+	// <div>
+	//   <h3>About</h3>
+	//   <p>Welcome to About page</p>
+	// </div>
 
 /***/ },
 /* 280 */
