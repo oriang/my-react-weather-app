@@ -114,7 +114,7 @@
 	$(document).foundation();
 
 	// Costum CSS
-	__webpack_require__(286);
+	__webpack_require__(290);
 
 	var App = React.createClass({
 	  displayName: 'App',
@@ -29568,13 +29568,17 @@
 
 
 /***/ },
-/* 286 */
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(287);
+	var content = __webpack_require__(291);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(285)(content, {});
@@ -29583,8 +29587,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./app.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./app.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -29594,7 +29598,7 @@
 	}
 
 /***/ },
-/* 287 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(284)();
@@ -29602,7 +29606,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title{\r\n  margin-top: 2.5rem;\r\n  margin-bottom: 2.5rem;\r\n}\r\n\r\ninput[type=search]{\r\n  box-shadow: none;\r\n}\r\n", ""]);
+	exports.push([module.id, ".page-title {\n  color: #444;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\ninput[type=search] {\n  box-shadow: none; }\n", ""]);
 
 	// exports
 

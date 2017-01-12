@@ -12,7 +12,7 @@ require('style!css!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
 // Costum CSS
-require('style!css!./styles/app.css');
+require('style!css!sass!./styles/app.scss');
 
 var App = React.createClass({
   render: function() {
